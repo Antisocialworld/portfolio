@@ -6,9 +6,7 @@ Do not publish while any `[OWNER: ...]` tags remain. The automated check `npm ru
 ---
 
 ## 1. Placeholders to Fill Before Deploy (`[OWNER: ...]`)
-
-- [ ] **Final URL**:
-  Replace `[OWNER: final URL]` with your live URL in `astro.config.mjs` and `src/components/Seo.astro` (6 tags).
+- None remaining. All tags resolved. Final URL configured as `https://antisocialworld.vercel.app/`.
 
 ---
 

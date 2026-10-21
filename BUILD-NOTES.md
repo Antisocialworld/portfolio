@@ -74,5 +74,6 @@
    - Source `owner-assets/rowta.png` (1024x1024) cropped to non-white blue strip (1024x538, left=0, top=243) and converted to `public/img/rowta-logo.webp` (6.0 KB).
    - Replaced old inline SVG stand-in in Design section with semantic `<Figure>` component.
 
-
-
+11. **Final Live Address (21 Oct 2026, 10:25)**:
+   - Final address set 21 Oct 2026. If a custom domain is added later, change the six values in Seo.astro and astro.config.mjs.
+   - Live URL: `https://antisocialworld.vercel.app/`

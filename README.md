@@ -2,7 +2,7 @@
 Portfolio of Solomon Ikharia (AntisocialWorld) — personal one-page portfolio site for product engineer Solomon Ikharia based in Lagos, Nigeria.
 
 ## Live site
-Not published yet.
+https://antisocialworld.vercel.app/
 
 ## What this is
 A single-page personal portfolio built for job applications at early-stage startups in scheduling, workforce, fintech, and B2B SaaS. It presents proven engineering case studies, app interface systems, design processes from pen sketches to SVG, and verified contact details with WAT working hours.
@@ -110,7 +110,7 @@ The owner publishes this site on Vercel:
 2. Select the Astro framework preset.
 3. Build command: npm run build
 4. Output directory: dist
-5. Set the final live domain in astro.config.mjs and src/components/Seo.astro.
+5. Set the final live domain in astro.config.mjs and src/components/Seo.astro (configured as https://antisocialworld.vercel.app/).
 
 ## Assets and licences
 - Fonts: Bricolage Grotesque and Instrument Sans are licensed under the SIL Open Font License (OFL notices in public/fonts/).
