@@ -1,0 +1,38 @@
+---
+/**
+ * src/components/Hero.astro
+ * Hero component with danfo stripe, positioning, contact links, and eager danfo wordmark.
+ */
+---
+<div class="stripe" aria-hidden="true"></div>
+
+<header id="hero" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-name">Solomon Ikharia, also known as AntisocialWorld. Lagos, Nigeria.</p>
+      <h1>I am a product engineer who builds web apps with secure sign-in, payments and background jobs, and checks AI-written code before it ships, for early-stage startups.</h1>
+      <p class="hero-difference">I prove behaviour, not just features, and break AI-generated code before you ship it.</p>
+      <div class="hero-meta">
+        <p>Working hours: 11:00 to 19:00 WAT (UTC+1).</p>
+        <p>Overlap: UK 6 to 7 hours, US East 4 to 5 hours.</p>
+      </div>
+      <ul class="contact-links">
+        <li><a class="primary" href="mailto:aviewfromthe6ix@gmail.com">Email me</a></li>
+        <li><a href="https://github.com/Antisocialworld">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/solomonikharia">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <img
+        src="/img/danfo.webp"
+        width="630"
+        height="585"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        alt="A Lagos danfo bus drawn as lettering, in yellow and black line work, with my signature in the corner."
+      />
+      <p class="hero-cap">Danfo wordmark, drawn by me.</p>
+    </div>
+  </div>
+</header>

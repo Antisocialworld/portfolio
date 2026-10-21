@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Solomon Ikharia (AntisocialWorld), Product Engineer",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:frozen": "node tools/extract-frozen.mjs",
+    "check:links": "node tools/check-links.mjs",
+    "check:contrast": "node tools/contrast-check.mjs",
+    "check:seo": "node tools/check-seo.mjs",
+    "check:owner": "node tools/no-owner-tags.mjs",
+    "check:scripts": "node tools/check-scripts.mjs",
+    "check:readme": "node tools/check-readme.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.1",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0"
+  }
+}

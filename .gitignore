@@ -1,0 +1,9 @@
+node_modules/
+tools/out/
+.DS_Store
+Thumbs.db
+
+dist/
+.astro/
+*.zip
+owner-assets/candidates/s00*

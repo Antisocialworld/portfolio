@@ -1,0 +1,40 @@
+---
+/**
+ * src/components/Figure.astro
+ * Semantic figure component per spec B8, D7, J23.
+ */
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  frameClass?: string;
+  figureClass?: string;
+  loading?: "lazy" | "eager";
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  caption,
+  frameClass = "frame",
+  figureClass = "",
+  loading = "lazy"
+} = Astro.props;
+---
+<figure class={figureClass}>
+  <div class={frameClass}>
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding="async"
+    />
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

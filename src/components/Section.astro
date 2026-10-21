@@ -1,0 +1,27 @@
+---
+/**
+ * src/components/Section.astro
+ * Standard section wrapper with aria-labelledby per spec J23 and Back to top link per spec J6.
+ */
+interface Props {
+  id: string;
+  headingId: string;
+  title: string;
+  lede?: string;
+  showBackToTop?: boolean;
+}
+
+const { id, headingId, title, lede, showBackToTop = true } = Astro.props;
+---
+<section id={id} aria-labelledby={headingId}>
+  <div class="wrap">
+    <h2 id={headingId}>{title}</h2>
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+    {showBackToTop && (
+      <div>
+        <a href="#hero" class="back-to-top">Back to top</a>
+      </div>
+    )}
+  </div>
+</section>

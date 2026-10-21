@@ -1,0 +1,831 @@
+/* global.css — Portfolio of Solomon Ikharia (AntisocialWorld) */
+/* Fonts: latin subset woff2 self-hosted in public/fonts/ */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ── Tokens (locked, spec E) ── */
+:root {
+  color-scheme: light;
+  --paper: #F9F7EB;
+  --ink: #1B1B18;
+  --muted: #5A584E;
+  --danfo: #FFD60A;
+  --line: #1B1B18;
+  --soft: #ECE8D3;
+  --link: #1F4D17;
+  --gutter: 16px;
+  --display: 'Bricolage Grotesque', 'Arial Narrow', Arial, sans-serif;
+  --body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--paper);
+  scroll-padding-top: 44px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+  overflow-wrap: anywhere;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* ── Focus rings ── */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Visually hidden text ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Skip link ── */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8px 12px;
+  z-index: 200;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip:focus {
+  left: 8px;
+}
+
+/* ── Danfo stripe (the one ornament, yellow band with ink line) ── */
+.stripe {
+  background: var(--danfo);
+  height: 16px;
+  position: relative;
+}
+.stripe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 4px;
+  background: var(--ink);
+}
+
+/* ── Layout wrapper ── */
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+
+/* ── Hero (compact on mobile to fit in one 844px screen with nav) ── */
+.hero {
+  padding: 14px 0 16px;
+}
+.hero-grid {
+  display: grid;
+  gap: 10px;
+}
+.hero-name {
+  font: 500 0.9rem/1.25 var(--body);
+  margin: 0 0 6px;
+  color: var(--muted);
+}
+h1 {
+  font: 800 clamp(1.45rem, 5vw, 3.4rem)/1.08 var(--display);
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 19em;
+  text-wrap: balance;
+}
+.hero-difference {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 34em;
+}
+.hero-meta {
+  margin: 8px 0 0;
+  display: grid;
+  gap: 4px;
+  font-size: 0.88rem;
+  max-width: 34em;
+}
+.hero-meta p {
+  margin: 0;
+}
+
+/* ── Buttons (pill, 2px ink border, 44px min height) ── */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  min-height: 44px;
+  min-width: 44px;
+}
+.contact-links a.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.hero-art {
+  justify-self: start;
+  width: min(100%, 180px);
+}
+.hero-art img {
+  max-height: 100px;
+  width: auto;
+}
+.hero-cap {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ── Navigation (spec J28: sticky compact bar on all screens, horizontally scrollable on mobile) ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  height: 44px;
+  z-index: 100;
+}
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 1rem var(--display);
+  color: var(--ink);
+  text-decoration: none;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+.nav-brand svg {
+  display: block;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-shrink: 0;
+}
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0 4px;
+}
+.nav-links a[aria-current="location"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* ── Section scaffolding ── */
+section {
+  padding: 36px 0;
+  border-top: 2px solid var(--ink);
+}
+h2 {
+  font: 800 clamp(1.4rem, 4vw, 2.3rem)/1.1 var(--display);
+  letter-spacing: -0.015em;
+  margin: 0 0 6px;
+  text-wrap: balance;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--muted);
+  max-width: 44em;
+}
+
+/* ── Case studies ── */
+.case {
+  display: grid;
+  gap: 14px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.case:first-of-type {
+  border-top: 0;
+  padding-top: 4px;
+}
+.case h3 {
+  font: 700 1.35rem/1.15 var(--display);
+  margin: 0;
+  text-wrap: balance;
+}
+.case .stack {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+dl {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+dt {
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+dd {
+  margin: 0;
+  max-width: 44em;
+}
+dd ul {
+  margin: 4px 0 0;
+  padding-left: 1.1em;
+}
+dd li {
+  margin: 0 0 4px;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+/* ── Status chip (Rowta) ── */
+.status-chip {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 4px 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  margin: 0 0 16px;
+}
+
+/* ── Rowta results table ── */
+.results-table {
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 44em;
+}
+.results-table th,
+.results-table td {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  text-align: left;
+}
+.results-table th {
+  background: var(--soft);
+  font-weight: 600;
+}
+
+/* ── Owner placeholder box ── */
+.owner-placeholder {
+  background: var(--soft);
+  border: 2px dashed var(--muted);
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Also built (APE-P-I & Daily Meal) ── */
+.also-built-block {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 2px solid var(--ink);
+}
+.also-built-grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* ── What makes me different (spec J8) ── */
+.different-list {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  max-width: 48em;
+}
+.different-item {
+  padding: 16px 20px;
+  background: var(--soft);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+.different-lead {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.different-item p {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ── Design gallery & frames ── */
+.gallery {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery .pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.g-okada { grid-column: 1 / span 2; }
+.g-noevil, .g-tee, .g-woman, .g-man, .g-habitat { grid-column: auto; }
+
+figure {
+  margin: 0;
+}
+figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 34em;
+}
+.frame {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.frame.tint {
+  background: var(--soft);
+}
+.frame img {
+  width: 100%;
+}
+
+.phone-screen {
+  max-width: 320px;
+}
+
+/* ── J28 Horizontal Snap Rows on Mobile (< 760px) ── */
+.snap-wrap,
+.snap-row-wrap {
+  position: relative;
+  margin: 12px 0 20px;
+}
+.snap-row {
+  display: flex !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 4px 2px 12px;
+  outline: none;
+}
+.snap-row:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.snap-row > .snap-card,
+.snap-row > figure,
+.snap-row > .frame,
+.snap-row > article {
+  flex: 0 0 72vw;
+  max-width: 290px;
+  scroll-snap-align: start;
+  margin: 0;
+}
+.snap-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 4px 0 0;
+  font-style: italic;
+}
+
+@media (min-width: 760px) {
+  .snap-row {
+    display: grid !important;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0;
+    gap: 20px;
+  }
+  .snap-row > .snap-card,
+  .snap-row > figure,
+  .snap-row > .frame,
+  .snap-row > article {
+    flex: none;
+    max-width: none;
+  }
+  .snap-hint {
+    display: none;
+  }
+  .snap-row.snap-col-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .snap-row.snap-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .snap-row.sprint-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .snap-row.perfume-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+.sketch-grid {
+  display: grid;
+  gap: 32px;
+}
+
+/* ── J27 Reveal Cards (Sketch to Vector interaction) ── */
+.reveal-card {
+  display: block;
+  min-height: 44px;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+}
+.reveal-card:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.reveal-stage {
+  display: grid;
+  grid-template-areas: "cardstack";
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.reveal-base {
+  grid-area: cardstack;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 150ms ease-in-out;
+}
+.reveal-overlay {
+  grid-area: cardstack;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+.reveal-card:hover .reveal-overlay,
+.reveal-card:focus-within .reveal-overlay {
+  opacity: 1;
+}
+.reveal-card:hover .reveal-base,
+.reveal-card:focus-within .reveal-base {
+  opacity: 0;
+}
+.reveal-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 6px 0 0;
+  font-style: italic;
+}
+
+@supports not selector(:focus-within) {
+  @media (hover: none) and (any-hover: none) {
+    .reveal-stage {
+      grid-template-areas: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .reveal-overlay, .reveal-base {
+      opacity: 1 !important;
+    }
+    .reveal-hint {
+      display: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-base,
+  .reveal-overlay {
+    transition: none !important;
+  }
+}
+
+.strength-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+/* ── More design work (details / summary) ── */
+.more-design-details {
+  margin-top: 48px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  padding: 16px 20px;
+  background: var(--soft);
+}
+.more-design-summary {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--ink);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.more-design-content {
+  margin-top: 24px;
+  display: grid;
+  gap: 40px;
+}
+.recreation-caption {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ── Open source block (spec J9) ── */
+.opensource-card {
+  padding: 20px;
+  background: var(--soft);
+  border: 2px solid var(--ink);
+  max-width: 44em;
+}
+
+/* ── About & Off the clock (spec J10, J11) ── */
+.about-block {
+  display: grid;
+  gap: 24px;
+  max-width: 44em;
+}
+.off-clock {
+  padding: 20px;
+  border-left: 4px solid var(--danfo);
+  background: var(--soft);
+}
+.off-clock p {
+  margin: 0 0 10px;
+}
+.off-clock p:last-child {
+  margin: 0;
+}
+
+/* ── Contact & Open to (spec J12) ── */
+.open-to-card {
+  padding: 16px 20px;
+  border: 2px solid var(--ink);
+  background: var(--soft);
+  margin-bottom: 24px;
+  max-width: 44em;
+}
+.hours {
+  display: grid;
+  gap: 6px;
+  max-width: 44em;
+}
+.hours p {
+  margin: 0;
+}
+
+/* ── Back to top link (spec J6) ── */
+.back-to-top {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: underline;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+/* ── Footer (spec C7) ── */
+footer {
+  padding: 32px 0 48px;
+  border-top: 2px solid var(--ink);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+footer p {
+  margin: 0 0 6px;
+}
+footer p:last-child {
+  margin: 0;
+}
+
+/* ── Desktop Breakpoints (760px+) ── */
+@media (min-width: 760px) {
+  :root {
+    --gutter: 32px;
+  }
+  .hero {
+    padding: 64px 0 72px;
+  }
+  .hero-grid {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 56px;
+  }
+  .hero-art {
+    justify-self: end;
+  }
+  .case {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+    gap: 48px;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 36px 28px;
+  }
+  .g-okada { grid-column: 1 / span 6; }
+  .g-okada .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .g-noevil { grid-column: 1 / span 4; }
+  .g-tee { grid-column: 5 / span 2; }
+  .g-woman { grid-column: 1 / span 3; }
+  .g-man { grid-column: 4 / span 3; }
+  .g-habitat { grid-column: 1 / span 3; }
+
+  .sprint-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .perfume-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .also-built-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sketch-pair {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* ── Ultra-wide / 4K font scaling ── */
+@media (min-width: 1920px) {
+  html {
+    font-size: clamp(100%, 0.45vw + 0.6rem, 125%);
+  }
+}
+
+/* ── Hover ── */
+@media (hover: hover) {
+  .contact-links a:hover {
+    background: var(--danfo);
+    color: var(--ink);
+  }
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* ── Forced colors ── */
+@media (forced-colors: active) {
+  .stripe { border: 1px solid; }
+  .frame { border: 1px solid; }
+  .status-chip { border: 1px solid; }
+  .contact-links a { border: 2px solid; }
+  .different-item { border: 1px solid; }
+  .owner-placeholder { border: 2px solid; }
+  :focus-visible { outline: 3px solid; }
+}
+
+/* ── Print ── */
+@media print {
+  .stripe { height: 8px; background: #ccc; }
+  .stripe::after { display: none; }
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+  .site-nav, .skip, .contact-links, .back-to-top {
+    display: none !important;
+  }
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+  img {
+    max-width: 50%;
+  }
+}

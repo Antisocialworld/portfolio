@@ -1,0 +1,249 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Solomon Ikharia, Product Engineer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light}
+:root{
+  --paper:#F9F7EB;      /* the cream behind my own wordmarks */
+  --ink:#1B1B18;
+  --muted:#5A584E;
+  --danfo:#FFD60A;      /* Lagos danfo yellow */
+  --line:#1B1B18;
+  --soft:#ECE8D3;
+  --link:#1F4D17;
+  --gutter:16px;
+  --display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 12px;z-index:10}
+.skip:focus{left:8px}
+
+/* the one ornament: a danfo's yellow body with its black stripe */
+.stripe{background:var(--danfo);height:22px;position:relative}
+.stripe::after{content:"";position:absolute;left:0;right:0;top:9px;height:4px;background:var(--ink)}
+
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+
+/* hero */
+.hero{padding:40px 0 56px}
+.hero-grid{display:grid;gap:32px}
+.name{font:500 1rem/1.3 var(--body);margin:0 0 20px;color:var(--muted)}
+h1{font:800 clamp(2.1rem,6.2vw,3.9rem)/1.04 var(--display);letter-spacing:-.02em;margin:0;max-width:19em;text-wrap:balance}
+.hero-meta{margin:28px 0 0;display:grid;gap:6px;max-width:34em}
+.hero-meta p{margin:0}
+.contact{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0;padding:0;list-style:none}
+.contact a{display:inline-block;padding:11px 16px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600;border-radius:999px;min-height:44px}
+.contact a.primary{background:var(--ink);color:var(--paper)}
+.contact a:hover{background:var(--danfo);color:var(--ink)}
+.hero-art{justify-self:start;width:min(100%,380px)}
+.hero-cap{margin:8px 0 0;font-size:.95rem;color:var(--muted)}
+
+/* section scaffolding */
+section{padding:56px 0;border-top:2px solid var(--ink)}
+h2{font:800 clamp(1.6rem,4vw,2.3rem)/1.1 var(--display);letter-spacing:-.015em;margin:0 0 8px}
+.lede{margin:0 0 36px;color:var(--muted);max-width:40em}
+
+/* case studies */
+.case{display:grid;gap:20px;padding:32px 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:8px}
+.case h3{font:700 1.55rem/1.15 var(--display);margin:0}
+.case .stack{margin:6px 0 0;color:var(--muted);font-size:.97rem}
+dl{margin:0;display:grid;gap:18px}
+dt{font-weight:600;margin:0 0 2px}
+dd{margin:0;max-width:44em}
+dd ul{margin:6px 0 0;padding-left:1.1em}
+dd li{margin:0 0 6px}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px}
+
+/* design gallery */
+.gallery{display:grid;gap:28px}
+figure{margin:0}
+figcaption{margin-top:8px;font-size:.95rem;color:var(--muted);max-width:34em}
+.frame{background:var(--paper);border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.frame.tint{background:var(--soft)}
+.frame img{width:100%}
+.note{margin:36px 0 0;color:var(--muted);max-width:40em}
+
+/* contact */
+.hours{display:grid;gap:6px;max-width:38em}
+.hours p{margin:0}
+footer{padding:28px 0 48px;border-top:2px solid var(--ink);color:var(--muted);font-size:.95rem}
+
+@media (min-width:760px){
+  :root{--gutter:32px}
+  .hero{padding:64px 0 72px}
+  .hero-grid{grid-template-columns:1.5fr 1fr;align-items:center;gap:56px}
+  .hero-art{justify-self:end}
+  .case{grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:48px}
+  .gallery{grid-template-columns:repeat(6,1fr);gap:36px 28px}
+  .g-okada{grid-column:1 / span 6}
+  .g-okada .pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .g-noevil{grid-column:1 / span 4}
+  .g-tee{grid-column:5 / span 2}
+  .g-woman{grid-column:1 / span 3}
+  .g-man{grid-column:4 / span 3}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<a class="skip" href="#work">Skip to case studies</a>
+<div class="stripe" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="name">Solomon Ikharia, Lagos, Nigeria</p>
+      <h1>I am a product engineer who builds web apps with secure sign-in, payments and background jobs, and checks AI-written code before it ships, for early-stage startups.</h1>
+      <div class="hero-meta">
+        <p>Working hours: 11:00 to 19:00 WAT (UTC+1).</p>
+      </div>
+      <ul class="contact">
+        <li><a class="primary" href="mailto:aviewfromthe6ix@gmail.com">Email me</a></li>
+        <li><a href="https://github.com/Antisocialworld">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/solomonikharia">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <img src="img/danfo.webp" width="630" height="585" alt="A Lagos danfo bus drawn as lettering, in yellow and black line work, with my signature in the corner.">
+      <p class="hero-cap">Danfo wordmark, drawn by me.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <h2 id="work-h">Three things I built</h2>
+    <p class="lede">Each one has a written account of what broke along the way. I specify the design, direct an AI coding agent, then read, test and break what it produces.</p>
+
+    <article class="case">
+      <div>
+        <h3>A job queue that survives crashes</h3>
+        <p class="stack">Next.js, Prisma, PostgreSQL, a separate worker process</p>
+      </div>
+      <dl>
+        <div><dt>Problem</dt><dd>Sending an email should not slow down the request, and it must not be sent twice if something fails halfway. I wanted every job's real outcome to be provable, not assumed.</dd></div>
+        <div><dt>My role</dt><dd>Solo. I wrote the spec and the data design before any code, directed the coding agent, and authorised and checked the break-it tests.</dd></div>
+        <div><dt>What I built</dt><dd>A job table with five states (pending, processing, succeeded, failed, dead) and a worker that claims jobs with a database lock so two workers never take the same one. Failed jobs retry with growing delays, and a job that keeps failing lands in a dead-letter view. A sweep recovers jobs left stuck by a dead worker.</dd></div>
+        <div><dt>Key decisions</dt>
+          <dd><ul>
+            <li>Repeat requests are stopped by a unique constraint in the database, not by a check in the code.</li>
+            <li>"Failed" (will retry) and "dead" (needs a person) are different states.</li>
+            <li>The email log row is written before the provider is called, so a crashed worker cannot send twice.</li>
+          </ul></dd></div>
+        <div><dt>Result</dt><dd>Five break-it tests on a real Postgres. With 50 jobs and a cap of three at once, the worker never exceeded three. A job that always failed retried with growing gaps (about 4, 8, 17 and 37 seconds) and then went dead on attempt five. After I killed the worker process, the sweep recovered the job and it finished once. Two workers on 20 jobs never took the same job twice.</dd></div>
+        <div><dt>Links</dt><dd class="links"><a href="https://github.com/Antisocialworld/job-queue">Code</a><a href="https://github.com/Antisocialworld/job-queue/blob/main/DOCUMENTATION.md">Full write-up</a></dd></div>
+      </dl>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Subscriptions and payments, in test mode</h3>
+        <p class="stack">Next.js, Prisma, PostgreSQL, Flutterwave</p>
+      </div>
+      <dl>
+        <div><dt>Problem</dt><dd>Let a user subscribe, upgrade, downgrade, cancel and resume, without charging twice or giving access they have not paid for.</dd></div>
+        <div><dt>My role</dt><dd>Solo. I specified the flows and the proration rule, directed the coding agent, and checked each flow against the database.</dd></div>
+        <div><dt>What I built</dt><dd>Hosted checkout with a monthly plan (NGN 4,000) and a yearly plan (NGN 40,000). Upgrades charge only the prorated difference, calculated on the server. Downgrades apply at the end of the period. Cancelling keeps access until the paid period ends. Every payment event goes into an append-only log, and the webhook checks an HMAC-SHA256 signature over the raw request body.</dd></div>
+        <div><dt>Key decisions</dt>
+          <dd><ul>
+            <li>The server decides the amount. The browser never does.</li>
+            <li>Granting access happens inside one database transaction that locks the payment record first.</li>
+            <li>Cancellation keeps the real period end, and I added Resume after manual testing showed a user had no way back.</li>
+          </ul></dd></div>
+        <div><dt>Result</dt><dd>My own testing found two real bugs. An upgrade went down the subscribe path and extended a monthly plan instead of switching it to yearly. Then two near-simultaneous loads of the return page could both grant a subscription. Fixing the second with a row lock gave one payment, one grant, and a period extended exactly once. The write-up records both, along with what is not built.</dd></div>
+        <div><dt>Links</dt><dd class="links"><a href="https://github.com/Antisocialworld/payment-subscription-slice">Code</a><a href="https://github.com/Antisocialworld/payment-subscription-slice/blob/main/DOCUMENTATION.md">Full write-up</a></dd></div>
+      </dl>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Sign-in that ends when you sign out</h3>
+        <p class="stack">Next.js, Prisma, SQLite, Zod, bcrypt</p>
+      </div>
+      <dl>
+        <div><dt>Problem</dt><dd>Build account creation, email verification, sign-in, password reset and a protected page as one small flow, and document every decision and limit.</dd></div>
+        <div><dt>My role</dt><dd>Solo. I wrote the spec, directed the coding agent, and checked its evidence for each behaviour.</dd></div>
+        <div><dt>What I built</dt><dd>Sign-up with a six-digit emailed code, sign-in with sessions stored in the database, password reset by emailed link, a dashboard that redirects when you are signed out, and rate limits on the sensitive routes.</dd></div>
+        <div><dt>Key decisions</dt>
+          <dd><ul>
+            <li>The cookie holds only a session ID, so signing out ends the session at once.</li>
+            <li>One Zod schema validates the form in the browser and again on the server.</li>
+            <li>The known weak spots are written down with their production fixes: an in-memory rate limiter, codes stored in plain text, and SQLite.</li>
+          </ul></dd></div>
+        <div><dt>Result</dt><dd>The rate limiter was tested with five failed sign-ups followed by a rejection on the sixth. The write-up also records a rate-limit reset caused by a dev-server reload, a database driver mismatch, and a Windows quoting problem that corrupted test requests.</dd></div>
+        <div><dt>Links</dt><dd class="links"><a href="https://github.com/Antisocialworld/Authentication-Slice">Code</a><a href="https://github.com/Antisocialworld/Authentication-Slice/blob/master/DOCUMENTATION.md">Full write-up</a></dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="design" aria-labelledby="design-h">
+  <div class="wrap">
+    <h2 id="design-h">Drawing and clothing design</h2>
+    <p class="lede">I draw too. All of this is my own work, and the spiral signature is mine.</p>
+
+    <div class="gallery">
+      <figure class="g-okada">
+        <div class="pair">
+          <div class="frame"><img src="img/okada-colour.webp" width="681" height="438" loading="lazy" alt="The word Okada drawn as a motorbike, in colour. The O is the front wheel."></div>
+          <div class="frame"><img src="img/okada-line.webp" width="681" height="438" loading="lazy" alt="The same Okada wordmark as plain line work."></div>
+        </div>
+        <figcaption>Okada wordmark. The wheel is the O. Shown in colour and as line work.</figcaption>
+      </figure>
+
+
+      <figure class="g-noevil">
+        <div class="frame"><img src="img/no-evil.webp" width="1400" height="1081" loading="lazy" alt="Three teal faces labelled See, Hear and Speak above the handwritten words No Evil."></div>
+        <figcaption>See, hear, speak no evil, redrawn as three faces.</figcaption>
+      </figure>
+
+      <figure class="g-tee">
+        <div class="frame tint"><img src="img/spooky-man-techpack.webp" width="567" height="800" loading="lazy" alt="A tech pack for a black tee called Spooky Man, with front and back views and print details in green."></div>
+        <figcaption>Spooky Man tee. Tech pack with front and back views and the print details.</figcaption>
+      </figure>
+
+      <figure class="g-woman">
+        <div class="frame"><img src="img/portrait-woman.webp" width="900" height="1144" loading="lazy" alt="Vector illustration of a woman with a high curly bun, pink diamond earrings and a purple wrap top."></div>
+        <figcaption>Character illustration.</figcaption>
+      </figure>
+
+      <figure class="g-man">
+        <div class="frame"><img src="img/portrait-man.webp" width="1100" height="1043" loading="lazy" alt="Vector illustration of a bearded man in a teal and black short-sleeve shirt on a yellow background."></div>
+        <figcaption>Character illustration.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h">Get in touch</h2>
+    <div class="hours">
+      <p>I work 11:00 to 19:00 WAT (UTC+1). That overlaps with the UK for 6 to 7 hours and with US East for 4 to 5 hours.</p>
+      <p>Based in Lagos, Nigeria.</p>
+    </div>
+    <ul class="contact">
+      <li><a class="primary" href="mailto:aviewfromthe6ix@gmail.com">aviewfromthe6ix@gmail.com</a></li>
+      <li><a href="https://github.com/Antisocialworld">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/solomonikharia">LinkedIn</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Solomon Ikharia. Illustrations and designs on this page are my own work.</div>
+</footer>
+
+</body></html>
