@@ -11,3 +11,6 @@ s01 to s06: own work, pen sketches on paper (Okada, Danfo, No Evil), cropped fro
 d01, d02: own work, screenshots of my Daily Meal app (phone). The restaurant names and addresses in it are seeded sample data from my API, not real businesses.
 
 logo-alien.svg, logo-alien-mono.svg, favicon-alien.svg: APPROVED by the owner on 21 Oct 2026 (the plain version: yellow alien head, almond eyes with highlights, small smile; no letters). The concept (a grey-alien head as the AntisocialWorld mark) is the owner's choice. The drawing was made by Claude as an original vector from the owner's direction; it is not a copy of the 32 px reference emoji the owner showed. The AW-letter experiments (nose, mouth, eyes) were tried and rejected.
+
+rowta.png: Rowta logo (source: owner-assets/rowta.png, 21 Oct 2026). Cropped to blue strip (1024x538) and converted to public/img/rowta-logo.webp.
+

@@ -5,42 +5,21 @@ Do not publish while any `[OWNER: ...]` tags remain. The automated check `npm ru
 
 ---
 
-## 1. Content Approvals Needed (`[OWNER: approve]`)
+## 1. Placeholders to Fill Before Deploy (`[OWNER: ...]`)
 
-- [ ] **SEO Description (spec J4)**:
-  `"Product engineer in Lagos building web apps with secure sign-in, payments and background jobs. I check AI-written code before it ships. Case studies, designs and contact."`
-  *File*: `src/components/Seo.astro`
-- [ ] **SEO Keywords (spec J4)**:
-  `"AntisocialWorld, Solomon Ikharia, product engineer, Lagos, Nigeria, authentication, payments, background jobs, Next.js, TypeScript, PostgreSQL, UI/UX design, logo design, AI-assisted development"`
-  *File*: `src/components/Seo.astro`
-- [ ] **What Makes Me Different points (spec J8)**:
-  Review and approve the 5 points in `src/pages/index.astro`.
+- [ ] **Final URL**:
+  Replace `[OWNER: final URL]` with your live URL in `astro.config.mjs` and `src/components/Seo.astro` (6 tags).
 
 ---
 
-## 2. Placeholders to Fill (`[OWNER: ...]`)
+## 2. Add Back When Confirmed or Published
 
-- [ ] **Final URL**:
-  Replace `[OWNER: final URL]` with your live URL in `astro.config.mjs` and `src/components/Seo.astro`.
-- [ ] **Rowta Agent-Reported Confirmations (spec C4)**:
-  - Confirm 18 rate limits.
-  - Confirm single-page sign-in component kit fact.
-  - Add repository file links for test suite, rate limits, timing (docs/gates/phase-2.md), and concurrency evidence.
-  - Confirm concurrency test numbers (9 tests &times; 10 rounds).
-- [ ] **Rowta Next Milestones (spec C4)**:
-  Next three milestones with dates, or "none dated".
-- [ ] **Rowta Repository Visibility (spec C4)**:
-  Confirm if `https://github.com/Antisocialworld/Rowta` is public, or change to "Repo link coming".
-- [ ] **Rowta Paper Sketch (spec C5)**:
-  Add photo of the hand-drawn paper sketch to `public/img/logo-sketch.webp`, or keep placeholder.
-- [ ] **Lettering Process (spec J17)**:
-  Add a sentence describing what changed between the initial pen sketches and the final vectors.
-- [ ] **Sprint Process (spec D1)**:
-  Add a brief sentence on who Sprint was for, what you tried, and what you changed.
-- [ ] **Perfume Gallery Process (spec D3)**:
-  Add a brief sentence on who it was for, what you tried, and what you changed.
-- [ ] **Recreations Attribution (Pass 2)**:
-  Add original designer names and portfolio/Figma links for EdgeKart (c15, c16) and Fintech wallet (f01).
+- [ ] **18 rate limits claim**: Confirm the count in the Rowta repo, then restore to the "What is built" list and the results table.
+- [ ] **Concurrency tests claim**: Confirm concurrency test numbers (9 tests &times; 10 rounds with no double success) and restore to the results table.
+- [ ] **Single-page sign-in fact**: Confirm Android-first app shell component kit and single-page sign-in, then restore to the "What is built" list.
+- [ ] **Repository link and file links**: When the Rowta repository is public, restore the GitHub link in Links and link the evidence rows to repository files.
+- [ ] **Dated milestones**: When dates are set, replace "No dates set yet." with the next three dated milestones.
+- **Optional later**: Add process notes, the Rowta logo sketch photo, and original-designer credits if known.
 
 ---
 

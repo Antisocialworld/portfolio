@@ -37,7 +37,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-await new Promise(resolve => server.listen(4321, '127.0.0.1', resolve));
+const PORT = 4339;
+await new Promise(resolve => server.listen(PORT, '127.0.0.1', resolve));
 
 const browser = await chromium.launch({
   executablePath: 'C:\\Users\\SETUP\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe',
@@ -53,7 +54,7 @@ const results = {};
 
 for (const vp of viewports) {
   const page = await browser.newPage({ viewport: { width: vp.width, height: vp.height } });
-  await page.goto('http://127.0.0.1:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle' });
 
   // Document total height
   const docHeight = await page.evaluate(() => document.documentElement.scrollHeight);
@@ -89,7 +90,12 @@ for (const vp of viewports) {
 
   // Screenshot
   const shotPath = `docs/ui-matrix/chromium-${vp.width}x${vp.height}.png`;
-  await page.screenshot({ path: shotPath, fullPage: true });
+  try {
+    await page.screenshot({ path: shotPath, fullPage: true });
+  } catch (err) {
+    console.warn(`Full page screenshot failed for ${vp.width}x${vp.height} (${err.message}). Capturing viewport.`);
+    await page.screenshot({ path: shotPath });
+  }
 
   results[`${vp.width}x${vp.height}`] = {
     docHeight,

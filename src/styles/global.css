@@ -143,7 +143,7 @@ a {
 }
 .hero-grid {
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 .hero-name {
   font: 500 0.9rem/1.25 var(--body);
@@ -204,14 +204,16 @@ h1 {
 
 .hero-art {
   justify-self: start;
-  width: min(100%, 180px);
+  width: 100%;
+  max-width: 315px;
 }
 .hero-art img {
-  max-height: 100px;
-  width: auto;
+  width: 100%;
+  max-width: 315px;
+  height: auto;
 }
 .hero-cap {
-  margin: 4px 0 0;
+  margin: 16px 0 0;
   font-size: 0.8rem;
   color: var(--muted);
 }
@@ -741,6 +743,17 @@ footer p:last-child {
   }
   .hero-art {
     justify-self: end;
+    width: 100%;
+    max-width: 315px;
+  }
+  .hero-art img {
+    width: 100%;
+    max-width: 315px;
+    height: auto;
+    max-height: none;
+  }
+  .hero-cap {
+    margin: 24px 0 0;
   }
   .case {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
