@@ -114,8 +114,8 @@ The owner publishes this site on Vercel:
 
 ## Assets and licences
 - Fonts: Bricolage Grotesque and Instrument Sans are licensed under the SIL Open Font License (OFL notices in public/fonts/).
-- Owner-made images: All drawings, wordmarks, UI screens, and illustrations are the owner's original work.
-- Device mockups: Handheld phone mockup templates and runner photos in Sprint screens are credited as third-party templates not made by the owner.
+- Owner-made images: The owner made the Danfo, Okada and No Evil lettering, the Sportsvill24 logo, the screen and interface designs for Sprint, Perfume Gallery and Daily Meal, and the Rowta logo supplied by the owner. EdgeKart and the fintech wallet are recreations of existing designs (not the owner's). The icons in the icon scene are not the owner's (only the composition is).
+- Sprint: the device mockup and the photos in the screens are not made by the owner and their source is not recorded; the screen designs are the owner's.
 - Logo credit: AntisocialWorld alien mark vector directed by the owner.
 
 ## Known gaps
